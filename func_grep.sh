@@ -1,6 +1,8 @@
 #!/bin/bash
 
-#egrep ';"\s+f' tags | grep -i --color=always 'ip' | grep -i --color=always 'sess' | grep -i --color=always 'hold' | less -r -S
+#Notes: Make sure you have a tags database build already
+#Exuberant tags format is required - http://ctags.sourceforge.net/FORMAT
+#For eg: ctags -L cscope.files will build ctags from all files listed in the file cscope.files
 
 usage()
 {
@@ -51,7 +53,5 @@ done
 
 grep_arg="';\"[[:space:]]$choice'"
 final_command="egrep $grep_arg tags $command | less -r -S"
-
-echo "$final_command"
 
 eval $final_command
