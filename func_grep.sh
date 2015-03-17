@@ -10,6 +10,10 @@ usage()
   exit 1
 }
 
+if [ ! -f tags ] ; then
+  echo "No tags file found !"
+fi
+
 choice=""
 
 while getopts "fsm" opt; do
